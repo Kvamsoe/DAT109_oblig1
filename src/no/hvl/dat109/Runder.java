@@ -47,12 +47,19 @@ public class Runder {
 		this.runder = runder;
 	}
 
-	public int rundeResultat(int runde, Terning[] terninger) {
+	public int rundeResultat(int runde, Terning[] terningskast) {
+		int resultat = 0;
 		if(runde<6) {
+			for(int i = 0; i<terningskast.length; i++) {
+				if(terningskast[i].getResultat() == runde) {
+					resultat++;
+				}
+			}
+		}else if(runde==6) {
 			
 		}
 		
-		return 0;
+		return resultat;
 	}
 }
 
