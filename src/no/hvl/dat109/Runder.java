@@ -56,10 +56,102 @@ public class Runder {
 				}
 			}
 		}else if(runde==6) {
+			if(treLike(terningskast)) {
+				resultat = 3;
+			}
+		}else if(runde==7) {
+			if(fireLike(terningskast)) {
+				resultat = 4;
+			}
+		}else if(runde==8) {
 			
 		}
 		
 		return resultat;
+	}
+	public boolean treLike(Terning[] terningskast) {
+		boolean treLike = false;
+		int antall1 = 0;
+		int antall2 = 0;
+		int antall3 = 0;
+		int antall4 = 0;
+		int antall5 = 0;
+		int antall6 = 0;
+		for(int i = 0; i<terningskast.length; i++) {
+			if(terningskast[i].getResultat()==0) {
+				antall1++;
+			}else if(terningskast[i].getResultat()==1) {
+				antall2++;
+			}else if(terningskast[i].getResultat()==2) {
+				antall3++;
+			}else if(terningskast[i].getResultat()==3) {
+				antall4++;
+			}else if(terningskast[i].getResultat()==4) {
+				antall5++;
+			}else if(terningskast[i].getResultat()==5) {
+				antall6++;
+			}
+		}
+		if(antall1>=3 || antall2>=3 || antall3>=3 || antall4>=3 || antall5>=3 || antall6>=3) {
+			treLike = true;
+		}
+		return treLike;
+	}
+	public boolean fireLike(Terning[] terningskast) {
+		boolean fireLike = false;
+		int antall1 = 0;
+		int antall2 = 0;
+		int antall3 = 0;
+		int antall4 = 0;
+		int antall5 = 0;
+		int antall6 = 0;
+		for(int i = 0; i<terningskast.length; i++) {
+			if(terningskast[i].getResultat()==0) {
+				antall1++;
+			}else if(terningskast[i].getResultat()==1) {
+				antall2++;
+			}else if(terningskast[i].getResultat()==2) {
+				antall3++;
+			}else if(terningskast[i].getResultat()==3) {
+				antall4++;
+			}else if(terningskast[i].getResultat()==4) {
+				antall5++;
+			}else if(terningskast[i].getResultat()==5) {
+				antall6++;
+			}
+		}
+		if(antall1>=4 || antall2>=4 || antall3>=4 || antall4>=4 || antall5>=4 || antall6>=4) {
+			fireLike = true;
+		}
+		return fireLike;
+	}
+	public boolean toPar(Terning[] terningskast) {
+		boolean toPar = false;
+		int antall1 = 0;
+		int antall2 = 0;
+		int antall3 = 0;
+		int antall4 = 0;
+		int antall5 = 0;
+		int antall6 = 0;
+		for(int i = 0; i<terningskast.length; i++) {
+			if(terningskast[i].getResultat()==0) {
+				antall1++;
+			}else if(terningskast[i].getResultat()==1) {
+				antall2++;
+			}else if(terningskast[i].getResultat()==2) {
+				antall3++;
+			}else if(terningskast[i].getResultat()==3) {
+				antall4++;
+			}else if(terningskast[i].getResultat()==4) {
+				antall5++;
+			}else if(terningskast[i].getResultat()==5) {
+				antall6++;
+			}
+		}
+		if(antall1==2 || antall2>=4 || antall3>=4 || antall4>=4 || antall5>=4 || antall6>=4) {
+			toPar = true;
+		}
+		return toPar;
 	}
 }
 
